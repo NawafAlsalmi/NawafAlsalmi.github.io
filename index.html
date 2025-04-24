@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        :root {
+            --primary: #2d3436;
+            --secondary: #0984e3;
+            --light: #f5f6fa;
+            --dark: #2d3436;
+            --gray: #636e72;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Section */
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--light);
+            text-align: center;
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #0767b3;
+            transform: translateY(-2px);
+        }
+        
+        /* Projects Section */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 300;
+            font-size: 2.2rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        .project-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: var(--dark);
+        }
+        
+        /* Clickable overlay */
+        .project-link-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        /* GitHub link styling */
+        .github-link {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            padding: 6px 12px;
+            background-color: #f6f8fa;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 6px;
+            font-size: 14px;
+            color: #24292f;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .github-link:hover {
+            background-color: #e9ecef;
+            border-color: rgba(0,0,0,0.15);
+        }
+        
+        .github-icon {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nawaf Abdullah AlSalmi</h1>
+                <p>Data analyst specializing in transforming complex datasets into actionable business insights through advanced analytics and visualization. <a href="https://www.linkedin.com/in/nawafalsalmi" target="_blank" rel="noopener noreferrer">
+                    @NawafAlsalmi 
+                </a></p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <!-- Clickable overlay for the entire card -->
+                    <a href="https://github.com/NawafAlsalmi/coffeeOrdersDataProject.git" class="project-link-overlay" target="_blank" rel="noopener noreferrer" aria-label="View Coffee Sales Dashboard project"></a>
+                    
+                    <div class="project-img" style="background-image: url('img/CoffeeSalesDashbored.png')"></div>
+                    <div class="project-info">
+                        <h3>Coffee Sales Dashboard</h3>
+                        <p>This project showcases an Excel-based data analysis of coffee sales data, where I transformed raw order records into an interactive sales dashboard.</p>
+                        <div class="project-tags">
+                            <span class="tag">Excel</span>
+                            <span class="tag">Pivot Table</span>
+                            <span class="tag">Xlookup</span>
+                        </div>
+                        <!-- GitHub link that stays clickable 
+                        <a href="https://github.com/NawafAlsalmi/coffeeOrdersDataProject.git" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <svg class="github-icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                            </svg>
+                            View on GitHub
+                        </a>-->
+                    </div>
+                </div>
+                
+                <!-- Project 2 
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://via.placeholder.com/600x400')"></div>
+                    <div class="project-info">
+                        <h3>Customer Segmentation Analysis</h3>
+                        <p>RFM analysis and clustering to identify high-value customer segments for targeted marketing.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Project 3 
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://via.placeholder.com/600x400')"></div>
+                    <div class="project-info">
+                        <h3>Supply Chain Optimization</h3>
+                        <p>Reduced logistics costs by 18% through route optimization algorithms.</p>
+                        <div class="project-tags">
+                            <span class="tag">R</span>
+                            <span class="tag">Optimization</span>
+                            <span class="tag">GIS</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>Recent graduate passionate about transforming data into actionable insights. Skilled in SQL, Python, and data visualization tools like Tableau/Power BI. Eager to apply analytical skills to solve real-world business problems. Open to internships and entry-level roles in data analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Nawaf Alsalmi. All rights reserved.</p>
+            <p>Contact: nawafalsalmi38@gmail.com | LinkedIn: <a href="https://www.linkedin.com/in/nawafalsalmi" target="_blank" rel="noopener noreferrer">
+                @NawafAlsalmi 
+            </a></p>
+        </div>
+    </footer>
+</body>
+</html>
